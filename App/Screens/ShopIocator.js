@@ -2,7 +2,7 @@ import { View,StyleSheet,Text, Image, TextInput, TouchableOpacity, ImageBackgrou
 import * as React from 'react';
 
 
-export default function Shoplocator({navigation}){
+export default function HomePage({navigation}){
 
     return(
         <View>

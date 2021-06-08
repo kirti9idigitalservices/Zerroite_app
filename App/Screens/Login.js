@@ -1,123 +1,139 @@
-import { View,StyleSheet,Text, Image, TextInput, TouchableOpacity, ImageBackground } from "react-native";
+import { View,StyleSheet,Text, Image, TextInput, TouchableOpacity, } from "react-native";
 import * as React from 'react';
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 
 
-export default function Login({navigation}){
-return(
-    
-        <View style={Style.contain}>
-             <View 
-        style={Style.container}>
+export default function Login({navigation}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+ 
+  return (
+    <View style={styles.container}>
+       <Image style={styles.lock} source={require("../img/icon/logo.png")} />
 
-
-< Text style={{ fontSize: 30, fontWeight:'bold',marginLeft: 75, marginTop: 10,}}> User Login </Text>
-< Text style={{ fontSize: 12,marginLeft:12, marginTop: 10,}}> Sign in with your social media account or email address</Text>
-                
-          <TouchableOpacity style={Style.button2} onPress={() => navigation.navigate('')}>
-             <Text style={{color:'white', fontSize:15,}}>Login with Facebook</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={Style.button3} onPress={() => navigation.navigate('')}>
-             <Text style={{color:'white', fontSize:15,}}>Login with Google+</Text>
-          </TouchableOpacity>
-
-
-         <Text style={{ fontSize: 20, fontWeight:'bold',marginLeft: 150, marginTop: 105,}}>or</Text>
-
-         <TextInput
-             placeholder="Email"
-              style={Style.textstyle}/>
-              
-
-               
-              <TextInput 
-               placeholder="Password" 
-               style={Style.textstyle}/>
-
-                    
-          <TouchableOpacity style={Style.button} onPress={() => navigation.navigate('')}>
-             <Text style={{color:'white', fontSize:15,}}>SIGN IN</Text>
-          </TouchableOpacity>
-
-
-          < Text style={{ fontSize: 12,marginLeft:105, marginTop: 70,}}> Not have an account?</Text>
-          <TouchableOpacity  
-                onPress={() => navigation.navigate('Signin')}>
-        <Text style={{color:'#007bff', marginLeft: 85,}}>Create a new account here</Text></TouchableOpacity>
-        
        
-      </View>
-     
-      </View>
-      
-)
-}
-
-var Style=StyleSheet.create({
-
-    contain:{
-        flex:1,
-        alignItems:'center',
-        justifyContent:'center',
-    },
-    container:{
-       
-        height:450,
-        width:330,
-        backgroundColor:"white",
-        position:"absolute",
-        marginLeft:15,
-        marginTop:80
-
-    },
+< Text style={{ fontSize: 40, fontWeight:'bold', marginTop:8,}}> User Login </Text>
+< Text style={{ fontSize: 14, marginTop: 3,color:'grey',}}> Sign in with your social media account or email address</Text>
   
+        
+          <TouchableOpacity style={styles.loginBtn}onPress={() => navigation.navigate('')}>
+             <Text style={styles.loginText}>Login with Facebook</Text>
+          </TouchableOpacity>
 
-   
-    button: {
+          <TouchableOpacity style={styles.loginBtn1} onPress={() => navigation.navigate('')}>
+             <Text style={styles.loginText}>Login with Google</Text>
+          </TouchableOpacity>
 
-        alignItems: "center",
-        backgroundColor:"#007bff",
-        position:"absolute",
-         borderRadius:5,
-         marginTop:340,
-         marginLeft:15,
-         padding: 10,
-         width: '90%',
-      },
+          <Text style={{ fontSize: 20, fontWeight:'bold',}}>----------------or------------------</Text>
 
-       button2: {
-        alignItems: "center",
-        backgroundColor:"#007bff",
-        position:"absolute",
-         borderRadius:5,
-         marginTop:90,
-         marginLeft:15,
-         padding: 10,
-         width: '90%',
-       },
+      <StatusBar style="auto" />
 
-       button3: {
-        alignItems: "center",
-        backgroundColor:"red",
-        position:"absolute",
-         borderRadius:5,
-         marginTop:140,
-         marginLeft:15,
-         padding: 10,
-         width: '90%',
-       },
-       
-
-
+      <Text style={{ fontSize: 20, fontWeight:'bold',marginRight: 190,}}>Email Address</Text>
+      <View style={styles.inputView}>
+      
      
-      textstyle:{
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Enter Email Address"
+          placeholderTextColor="grey"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
 
-        borderBottomWidth:1,
-        color:"grey",
-        borderBottomColor:"#787674",
-        marginTop:25,
-        paddingLeft:10,
-        width: 280,
-        marginLeft: 20,
-      },
-})
+     <Text style={{ fontSize: 20, fontWeight:'bold',marginRight: 230,}}>Password</Text>
+      <View style={styles.inputView}>
+    
+  
+        
+        <TextInput
+          style={styles.TextInput}
+          placeholder=" Enter Password"
+          placeholderTextColor="grey"
+          secureTextEntry={true}
+          onChangeText={(password) => setPassword(password)}
+        />
+        
+      </View>
+ 
+      
+ 
+      <TouchableOpacity style={styles.loginBtn2}>
+        <Text style={styles.loginText}>SIGN IN</Text>
+      </TouchableOpacity>
+
+       
+     <Text  style={{  marginTop: 3,}}>Don't have an account?
+     <TouchableOpacity  
+       onPress={() => navigation.navigate('Signin')}>
+   <Text style={{color:'#007bff',}}>Sign UP</Text></TouchableOpacity> </Text>
+
+    </View>
+  );
+}
+ 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+   
+  },
+ 
+  lock:{
+    height:70,
+    width:200,
+  },
+ loginText:{
+    color: "white",
+    fontWeight:'bold',
+    fontSize:15,
+  },
+
+  inputView: {
+    backgroundColor: "#ccc",
+    borderRadius: 10,
+    width: "90%",
+    height: 40,
+    marginBottom: 5,
+  },
+ 
+  TextInput: {
+    height: 45,
+    marginLeft: 15,
+  },
+
+ 
+  loginBtn: {
+    width: "94%",
+    borderRadius: 10,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "#007bff",
+  },
+
+  
+  loginBtn1: {
+    width: "94%",
+    borderRadius: 10,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "red",
+  },
+
+  
+  loginBtn2: {
+    width: "40%",
+    borderRadius: 10,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "#007bff",
+  },
+});

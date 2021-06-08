@@ -1,154 +1,195 @@
-import { View,StyleSheet,Text, Image, TextInput, TouchableOpacity, ImageBackground } from "react-native";
+import { View,StyleSheet,Text, Image, TextInput, TouchableOpacity, } from "react-native";
 import * as React from 'react';
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 
 
-export default function Signin({navigation}){
-
-    return(
-        <View style={Style.contain}>
-        <View 
-   style={Style.container}>
-
-
-< Text style={{ fontSize: 25, fontWeight:'bold',marginLeft: 55, marginTop: 10,}}> Create an Account </Text>
-< Text style={{ fontSize: 12,marginLeft:12, marginTop: 10,}}> Sign up with your social media account or email address</Text>
-           
-     <TouchableOpacity style={Style.button2} onPress={() => navigation.navigate('')}>
-        <Text style={{color:'white', fontSize:15, }}>Login with Facebook</Text>
-     </TouchableOpacity>
-
-
-  
-   
-           <TouchableOpacity style={Style.button3} onPress={() => navigation.navigate('')}>
-             
-                 <Image style={Style.lock} source={require("../img/icon/Google.png")} />
-                 <Text style={{color:'grey', fontSize:15,}}> Login with Google</Text>
-          </TouchableOpacity>
-         
-
-
-
-    <Text style={{ fontSize: 20, fontWeight:'bold',marginLeft: 150, marginTop: 110,}}>or</Text>
-
-    <TextInput
-        placeholder="Name"
-         style={Style.textstyle}/>
-
-    <TextInput
-        placeholder="Email"
-         style={Style.textstyle}/>
-         
-
-          
-         <TextInput 
-          placeholder="Password" 
-          style={Style.textstyle}/>
-
-         <TextInput 
-          placeholder=" Confirm Password" 
-          style={Style.textstyle}/>
-
-               
-     <TouchableOpacity style={Style.button} onPress={() => navigation.navigate('')}>
-        <Text style={{color:'white', fontSize:15,}}>SIGN UP</Text>
-     </TouchableOpacity>
-
-
-   
-
-     <Text  style={{marginLeft:85,  marginTop: 80,}}>Already have an account?
-     <TouchableOpacity  
-           onPress={() => navigation.navigate('Login')}>
-   <Text style={{color:'#007bff',}}>Login</Text></TouchableOpacity> </Text>
-   
-  
- </View>
-
- </View>
+export default function Signin({navigation}) {
+  const [Fname, setFname] = useState("");
+  const [Lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [Cpassword, setCPassword] = useState("");
  
-    );
+  return (
+    <View style={styles.container}>           
+       <Image style={styles.lock} source={require("../img/icon/logo.png")} />
 
- }
-
- var Style=StyleSheet.create({
+       
+< Text style={{ fontSize:25, fontWeight:'bold', marginTop:8,}}> Create an Account </Text>
+< Text style={{ fontSize: 14, marginTop: 3,color:'grey',}}> Sign in with your social media account or email address</Text>
+  
         
-    contain:{
-        flex:1,
-        alignItems:'center',
-        justifyContent:'center',
-    },
-    container:{
-       
-        height:550,
-        width:330,
-        backgroundColor:"white",
-        position:"absolute",
-        marginLeft:15,
-        marginTop:80
+          <TouchableOpacity style={styles.loginBtn}onPress={() => navigation.navigate('')}>
+             <Text style={styles.loginText}>Login with Facebook</Text>
+          </TouchableOpacity>
 
-    },
-  
+          <TouchableOpacity style={styles.loginBtn1} onPress={() => navigation.navigate('')}>
+             <Text style={styles.loginText}>Login with Google</Text>
+          </TouchableOpacity>
 
-   
-    button: {
+          <Text style={{ fontSize: 20, fontWeight:'bold',}}>----------------or------------------</Text>
 
-        alignItems: "center",
-        backgroundColor:"#007bff",
-        position:"absolute",
-         borderRadius:5,
-         marginTop:440,
-         marginLeft:15,
-         padding: 10,
-         width: '90%',
-      },
+      <StatusBar style="auto" />
 
-       button2: {
-        alignItems: "center",
-        backgroundColor:"#007bff",
-        position:"absolute",
-         borderRadius:5,
-         marginTop:90,
-         marginLeft:15,
-         padding: 10,
-         width: '90%',
-       },
-       button3: {
-        //alignItems: "center",
-        backgroundColor:"white",
-        position:"absolute",
-         borderRadius:5,
-         marginTop:140,
-         marginLeft:15,
-         padding: 10,
-         width: '90%',
-         flexDirection:'row',
-         borderColor:'grey',
-         borderWidth: 1,
-       },
-       
-
-
+      <View style={{flexDirection:'row',}}>
+<View>
+      <Text style={{ fontSize: 15, fontWeight:'bold',marginRight: 80,}}>First name</Text>
+      <View style={styles.inputView2}>
+      
      
-      textstyle:{
+        <TextInput
+          style={styles.TextInput}
+          placeholder="First name"
+          placeholderTextColor="grey"
+          onChangeText={(Fname) => setFname(Fname)}
+        />
+      </View>
+      </View>
 
-        borderBottomWidth:1,
-        color:"grey",
-        borderBottomColor:"#787674",
-        marginTop:20,
-        paddingLeft:10,
-        width: 280,
-        marginLeft: 20,
-      },
+<View>
+      <Text style={{ fontSize: 15, fontWeight:'bold',marginRight:100,}}>Last name</Text>
+      <View style={styles.inputView2}>
+      
+     
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Last name"
+          placeholderTextColor="grey"
+          onChangeText={(Lname) => setLname(Lname)}
+        />
+      </View>
 
-      lock:{
-        height:20,
-        width:20,
-      padding:10,
-        marginLeft:15,
+      </View>
+      </View>
+
+      <Text style={{ fontSize: 15, fontWeight:'bold',marginRight: 230,}}>Email Address</Text>
+      <View style={styles.inputView}>
+      
+     
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Enter Email Address"
+          placeholderTextColor="grey"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
+
+     <Text style={{ fontSize: 15, fontWeight:'bold',marginRight: 260,}}>Password</Text>
+      <View style={styles.inputView}>
     
-      },
-    
-
- });
+  
+        
+        <TextInput
+          style={styles.TextInput}
+          placeholder=" Enter Password"
+          placeholderTextColor="grey"
+          secureTextEntry={true}
+          onChangeText={(password) => setPassword(password)}
+        />
+        
+      </View>
  
+      <Text style={{ fontSize: 15, fontWeight:'bold',marginRight: 200,}}>Confirm Password</Text>
+      <View style={styles.inputView}>
+    
+  
+        
+        <TextInput
+          style={styles.TextInput}
+          placeholder=" Enter Confirm Password"
+          placeholderTextColor="grey"
+          secureTextEntry={true}
+          onChangeText={(Cpassword) => setCPassword(Cpassword)}
+        />
+        
+      </View>
+ 
+      <TouchableOpacity style={styles.loginBtn2}>
+        <Text style={styles.loginText}>SIGN UP</Text>
+      </TouchableOpacity>
+
+       
+     <Text  style={{  marginTop: 3,}}>Already have an account?
+     <TouchableOpacity  
+       onPress={() => navigation.navigate('Login')}>
+   <Text style={{color:'#007bff',}}>Sign In</Text></TouchableOpacity> </Text>
+
+    </View>
+  );
+}
+ 
+const styles = StyleSheet.create({
+  container: {
+  flex:1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+   
+  },
+ 
+  lock:{
+    height:70,
+    width:200,
+  },
+ loginText:{
+    color: "white",
+    fontWeight:'bold',
+    fontSize:15,
+  },
+
+  inputView: {
+    backgroundColor: "#ccc",
+    borderRadius: 10,
+    width: "90%",
+    height: 35,
+    marginBottom: 5,
+  },
+ 
+  TextInput: {
+    height: 45,
+    marginLeft: 10,
+  },
+
+  
+  inputView2: {
+    backgroundColor: "#ccc",
+    borderRadius: 10,
+    width: '95%',
+    height: 35,
+    marginBottom: 5,
+    
+  },
+ 
+  loginBtn: {
+    width: "94%",
+    borderRadius: 10,
+    height: 35,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "#007bff",
+  },
+
+  
+  loginBtn1: {
+    width: "94%",
+    borderRadius: 10,
+    height: 35,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "red",
+  },
+
+  
+  loginBtn2: {
+    width: "40%",
+    borderRadius: 10,
+    height: 35,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "#007bff",
+  },
+});

@@ -6,7 +6,7 @@ export default function Cart({navigation}){
 
     return(
         <View style={Style.container}>
-           < Text style={{ fontSize: 25, fontWeight:'bold', marginTop: 10,}}> Cart empty </Text>
+           < Text style={{ fontSize: 25, fontWeight:'bold', marginTop: 10,}}> Cart is empty </Text>
 
            <TouchableOpacity style={Style.button3} onPress={() => navigation.navigate('HomePage')}>
                <Text style={{color:'blue', fontSize:15,}}>Go to Shopping</Text>
