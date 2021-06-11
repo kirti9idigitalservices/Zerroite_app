@@ -9,7 +9,7 @@ export default function HomePage({navigation}){
 
   
     const [searchQuery, setSearchQuery] = React.useState('');
-  
+  3
     const onChangeSearch = query => setSearchQuery(query);
    
      
@@ -32,14 +32,61 @@ export default function HomePage({navigation}){
       <ImageSlider images={['http://placeimg.com/640/480/any',
     require('../img/b11.jpg')
   ]}/>
-      </View>  
+      </View> 
+      < Text style={{ fontSize: 20, fontWeight:'bold', marginTop:4, marginLeft:10,}}> Grocery </Text>
+      <ScrollView horizontal={true}>
+                
+      <View style={{flexDirection:'row'}}>
+      <View style={styles.RectangleShapeView4}>
+          <Image style={styles.image1} source={require('../img/cat5.jpg')}/>
+          < Text style={{ fontSize: 15, fontWeight:'bold',color:'black',marginTop:5, marginLeft:32,}}>
+            Vegetables </Text>
+        </View>
+
+        <View style={styles.RectangleShapeView4}>
+          <Image style={styles.image1} source={require('../img/m1.jpg')}/>
+          < Text style={{ fontSize: 15, fontWeight:'bold',color:'black',marginTop:5, marginLeft:37,}}>
+            Pulse </Text>
+        </View>
+
+        <View style={styles.RectangleShapeView4}>
+          <Image style={styles.image1} source={require('../img/m2.jpg')}/>
+          < Text style={{ fontSize: 15, fontWeight:'bold',color:'black',marginTop:5, marginLeft:37,}}>
+            Pulse </Text>
+        </View>
+
+        
+        <View style={styles.RectangleShapeView4}>
+          <Image style={styles.image1} source={require('../img/m3.jpg')}/>
+          < Text style={{ fontSize: 15, fontWeight:'bold',color:'black',marginTop:5, marginLeft:35,}}>
+            Vegetables</Text>
+        </View>
+
+        
+        <View style={styles.RectangleShapeView4}>
+          <Image style={styles.image1} source={require('../img/cat3.jpg')}/>
+          < Text style={{ fontSize: 15, fontWeight:'bold',color:'black',marginTop:5, marginLeft:32,}}>
+            Pulse </Text>
+        </View>
+
+
+        
+        <View style={styles.RectangleShapeView4}>
+          <Image style={styles.image1} source={require('../img/cat2.jpg')}/>
+          < Text style={{ fontSize: 15, fontWeight:'bold',color:'black',marginTop:5, marginLeft:32,}}>
+            Vegetables</Text>
+        </View>
+
+        </View>
+        </ScrollView>
+
 
       <View>
       < Text style={{ fontSize: 20, fontWeight:'bold', marginTop:4, marginLeft:10,}}> Shop by Section </Text>
       <View style={{flexDirection:'row',}}>
         <View style={styles.RectangleShapeView2}>
           <ImageBackground style={styles.image} source={require('../img/banner1.jpg')}>
-          < Text style={{ fontSize: 18, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
+          < Text style={{ fontSize: 15, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
             Fresh Fruit and Vegetable On Products </Text>
 
             < Text style={{ fontSize:15, marginTop:27,marginLeft:15,color:'white'}}>
@@ -49,7 +96,7 @@ export default function HomePage({navigation}){
 
         <View style={styles.RectangleShapeView3}>
           <ImageBackground style={styles.image} source={require('../img/banner2-min.jpg')}>
-          < Text style={{ fontSize: 18, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
+          < Text style={{ fontSize: 15, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
             Fresh Fruit and Vegetable On Products </Text>
          
             < Text style={{ fontSize:15, marginTop:27,marginLeft:15,color:'white'}}>
@@ -62,7 +109,7 @@ export default function HomePage({navigation}){
         <View style={{flexDirection:'row',}}>
         <View style={styles.RectangleShapeView2}>
           <ImageBackground style={styles.image} source={require('../img/banner1.jpg')}>
-          < Text style={{ fontSize: 18, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
+          < Text style={{ fontSize: 15, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
             Fresh Fruit and Vegetable On Products </Text>
 
             < Text style={{ fontSize:15, marginTop:27,marginLeft:15,color:'white'}}>
@@ -72,7 +119,7 @@ export default function HomePage({navigation}){
 
         <View style={styles.RectangleShapeView3}>
           <ImageBackground style={styles.image} source={require('../img/banner2-min.jpg')}>
-          < Text style={{ fontSize: 18, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
+          < Text style={{ fontSize: 15, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
             Fresh Fruit and Vegetable On Products </Text>
          
             < Text style={{ fontSize:15, marginTop:27,marginLeft:15,color:'white'}}>
@@ -86,7 +133,7 @@ export default function HomePage({navigation}){
         <View style={{flexDirection:'row',}}>
         <View style={styles.RectangleShapeView2}>
           <ImageBackground style={styles.image} source={require('../img/banner1.jpg')}>
-          < Text style={{ fontSize: 18, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
+          < Text style={{ fontSize: 15, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
             Fresh Fruit and Vegetable On Products </Text>
 
             < Text style={{ fontSize:15, marginTop:27,marginLeft:15,color:'white'}}>
@@ -96,7 +143,7 @@ export default function HomePage({navigation}){
 
         <View style={styles.RectangleShapeView3}>
           <ImageBackground style={styles.image} source={require('../img/banner2-min.jpg')}>
-          < Text style={{ fontSize: 18, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
+          < Text style={{ fontSize: 15, fontWeight:'bold', marginTop:10,marginLeft:15,color:'white'}}>
             Fresh Fruit and Vegetable On Products </Text>
          
             < Text style={{ fontSize:15, marginTop:27,marginLeft:15,color:'white'}}>
@@ -106,11 +153,10 @@ export default function HomePage({navigation}){
         </View>
 
         </View>
+        
+         </View> 
 
-
-        < Text style={{ fontSize: 20, fontWeight:'bold', marginTop:4, marginLeft:10,}}> Exclusive Offer </Text>
-     </View> 
-
+< Text style={{ fontSize: 20, fontWeight:'bold', marginTop:4, marginLeft:10,}}> Exclusive Offer </Text>
      <ScrollView horizontal={true}>
                 
                 <View style={{flexDirection:'row'}}>
@@ -144,7 +190,43 @@ export default function HomePage({navigation}){
 
         </View>
         </ScrollView>
-            
+
+
+        
+< Text style={{ fontSize: 20, fontWeight:'bold', marginTop:4, marginLeft:10,}}>Best Offer </Text>
+     <ScrollView horizontal={true}>
+                
+                <View style={{flexDirection:'row'}}>
+      <View style={styles.RectangleShapeView2}>
+          <Image style={styles.image} source={require('../img/cat5.jpg')}/>
+        </View>
+
+        <View style={styles.RectangleShapeView2}>
+          <Image style={styles.image} source={require('../img/m1.jpg')}/>
+        </View>
+
+        <View style={styles.RectangleShapeView2}>
+          <Image style={styles.image} source={require('../img/m2.jpg')}/>
+        </View>
+
+        
+        <View style={styles.RectangleShapeView2}>
+          <Image style={styles.image} source={require('../img/m3.jpg')}/>
+        </View>
+
+        
+        <View style={styles.RectangleShapeView2}>
+          <Image style={styles.image} source={require('../img/cat3.jpg')}/>
+        </View>
+
+
+        
+        <View style={styles.RectangleShapeView2}>
+          <Image style={styles.image} source={require('../img/cat2.jpg')}/>
+        </View>
+
+        </View>
+        </ScrollView>    
        
 
         </ScrollView>   
@@ -176,8 +258,7 @@ export default function HomePage({navigation}){
         RectangleShapeView1: {
             width: '100%',
             height: 90,
-            backgroundColor: 'red',
-            //flexDirection: 'row',
+            backgroundColor: 'pink',
             marginTop:5,
             },
     
@@ -185,8 +266,8 @@ export default function HomePage({navigation}){
         RectangleShapeView2: {
           width: 170,
           height: 140,
-          backgroundColor: 'red',
-          flexDirection: 'row',
+          backgroundColor: '#ccc',
+         // flexDirection: 'row',
           marginTop:5,
           marginLeft: 10,
           },
@@ -195,20 +276,41 @@ export default function HomePage({navigation}){
         RectangleShapeView3: {
           width: 170,
           height: 140,
-          backgroundColor: 'red',
-          flexDirection: 'row',
+          backgroundColor: 'yellow',
+         // flexDirection: 'row',
           marginTop:5,
           marginRight: 10,
           marginLeft:5,
           },
 
+                 
+        RectangleShapeView4: {
+            width: 120,
+            height: 100,
+            backgroundColor: 'white',
+           // flexDirection: 'row',
+            marginTop:5,
+            marginRight: 10,
+            marginLeft:5,
+            },
+  
  
    image:{
               height: '100%',
               width: '100%',
-            
+   },
           
-          },
+   image1:{
+    height: '50%',
+    width: '45%',
+    marginLeft:30,
+    marginRight:30,
+    marginTop:20,
+
+    
+  
+    },
+
     searchbar:{
       width:'80%',
       marginLeft:5,
@@ -216,6 +318,6 @@ export default function HomePage({navigation}){
       marginLeft: 3,
       marginTop: 10,
       //backgroundColor: '#45B39D',
-    },  
-
-});
+    }, 
+    
+  });
